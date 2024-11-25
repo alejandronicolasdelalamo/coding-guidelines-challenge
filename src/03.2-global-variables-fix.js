@@ -1,14 +1,42 @@
-function add(x, y) {
-  return x + y;
+class Calculator {
+  constructor() {
+    this.result = 0; 
+  }
+
+  add(x, y) {
+    return x + y; 
+  }
+
+  subtract(x, y) {
+    return x - y; 
+  }
+
+  accumulate(x) {
+    this.result += x; 
+    return this.result;
+  }
+
+  getResult() {
+    return this.result; 
+  }
+
+  reset() {
+    this.result = 0; 
+    return this.result;
+  }
 }
 
-function subtract(x, y) {
-  return x - y;
-}
 
-function accumulate(x) {
-  // This function is no longer possible
-}
+const calculator = new Calculator();
 
-console.log(add(5, 10));
-console.log(subtract(6, 12));
+console.log(calculator.add(5, 10)); 
+console.log(calculator.subtract(6, 12)); 
+
+calculator.accumulate(15); 
+console.log(calculator.getResult()); 
+
+calculator.accumulate(10); 
+console.log(calculator.getResult()); 
+
+calculator.reset(); 
+console.log(calculator.getResult()); 
